@@ -19,7 +19,7 @@ def main():
     subparsers = parser.add_subparsers(dest="command")
 
     merge_parser = subparsers.add_parser("merge", help="merge PDFs sequentially")
-    merge_parser.add_argument("--files", nargs="*", default=[], help="pdf files to merge")
+    merge_parser.add_argument("--files", nargs="+", default=[], help="pdf files to merge")
     merge_parser.add_argument("--directory", help="merge all pdfs in a directory")
     merge_parser.add_argument("-o", "--output", default="merged_output.pdf", help="output filename")
 
